@@ -73,9 +73,23 @@ int main()
     S1.getRoll();
     cout << S1.getGrade(123) << endl;
     // Or we can directly print in getter functions
+    Student *S = new Student; // Dynamic Memory Allocation
+    S->setName("Apple");      // S is a pointer that points to object of class Student
+    (*S).setAge(21);          // Dereferencing pointer S to access member functions
+    S->getName();
     return 0;
 }
+
 // Anyone can access data if they were public, but using getters and setters
 // functions we can add validation and constraints while accessing and setting data
 // Object: An entity that has state and behavior, anything that exists in physical world
 // Student S1 is an object of class Student
+
+// Static v/s Dynamic Memory Allocation
+// Static Memory Allocation: Memory is allocated at compile time
+// Dynamic Memory Allocation: Memory is allocated at runtime using new keyword
+// Stack Memory v/s Heap Memory
+// Stack Memory: Used for static memory allocation, faster access, limited size
+// Heap Memory: Used for dynamic memory allocation, slower access, larger size
+// We use new keyword to allocate memory in heap (int *ptr = new int; *ptr = 10;)
+// We use delete keyword to free memory allocated in heap (delete ptr;)

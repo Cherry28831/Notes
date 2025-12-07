@@ -49,9 +49,39 @@ This folder demonstrates constructors and destructors in C++ using a **Customer*
   }
   ```
 
+**Copy Constructor**
+- **Syntax**: `Customer(Customer &B) { }`
+- **Purpose**: Creates a new object as a copy of an existing object
+- **Reference Variable**: Used to avoid infinite recursion
+- **Usage**: `Customer c3(c2);` - copies c2 into c3
+- **How it works**: Copies all data members from the passed object
+
+**Destructor**
+- **Definition**: Special function invoked automatically when object is destroyed or goes out of scope
+- **Syntax**: `~ClassName() { }`
+- **Name**: Same as class name with `~` prefix
+- **Return Type**: No return type
+- **Parameters**: No parameters allowed
+- **Limit**: Only one destructor per class
+- **Purpose**: Release resources allocated to the object (especially dynamic memory)
+- **Automatic Call**: Called automatically, no need to call explicitly
+- **Dynamic Memory**: Can delete only resources allocated dynamically using `new`
+
+**Destructor Call Order (LIFO)**
+- **Order**: Last In First Out - reverse order of object creation
+- **Example**: If objects created as 1, 2, 3, destructors called as 3, 2, 1
+- **Reason**: Last created object may be dependent on previous objects
+- **Scope**: When function ends, last created object goes out of scope first
+
+**Dynamic Object Deletion**
+- **Creation**: `Customer2 *c6 = new Customer2("Charlie", 4000);`
+- **Explicit Deletion**: `delete c6;` - explicitly calls destructor
+- **Use Case**: Control when destructor is called for heap-allocated objects
+
 **Real-world Example**
 - **Banking System**: Customer class with name, account_number, and balance
 - **Default Customer**: Created with unknown details
 - **Registered Customer**: Created with specific account details
+- **Customer2 Class**: Demonstrates destructor with dynamic memory (balance pointer)
 
 ---

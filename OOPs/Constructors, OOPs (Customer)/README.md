@@ -1,12 +1,12 @@
-# C++ Constructors and Destructors - Customer Class
+# C++ Constructors and OOP Concepts - Customer Class
 
 ## 📚 Overview
-This folder demonstrates constructors and destructors in C++ using a **Customer** class from a banking system example.
+This folder demonstrates constructors, destructors, and advanced OOP concepts in C++ using a **Customer** class from a banking system example.
 
 ## 📁 Files in This Folder
 
-### `Customer.cpp`
-**Constructor types and usage**
+### `Customer_Construct_Destruct.cpp`
+**Constructor types and destructor usage**
 
 #### Core Concepts:
 
@@ -83,5 +83,55 @@ This folder demonstrates constructors and destructors in C++ using a **Customer*
 - **Default Customer**: Created with unknown details
 - **Registered Customer**: Created with specific account details
 - **Customer2 Class**: Demonstrates destructor with dynamic memory (balance pointer)
+
+---
+
+### `Customer_Encapsulation.cpp`
+**Static data members and encapsulation**
+
+#### Core Concepts:
+
+**Static Data Member**
+- **Definition**: Attributes that belong to the class itself, not to any specific object
+- **Shared**: Only one copy created and shared among all objects of the class
+- **Initialization**: Initialized only once at program start, before any object is created
+- **Memory**: All objects point to the same memory location for static members
+- **Examples**: `total_customer` (count), `total_balance` (sum of all balances)
+
+**Static Member Declaration**
+- **Inside Class**: `static int total_customer;` - declaration only
+- **Outside Class**: `int Customer::total_customer = 0;` - initialization required
+- **Scope Resolution**: `::` operator used to define static members outside class
+- **Reason**: Static members are not tied to specific objects but belong to the class
+
+**Static Member Functions**
+- **Purpose**: Can access only static data members
+- **Syntax**: `static void accessTotalBalance() { }`
+- **Limitation**: Cannot access non-static data members
+- **Access**: Can be called without creating any object (`Customer::accessTotalBalance()`)
+- **Use Case**: Access private static members when needed
+
+**Direct Access to Static Members**
+- **Public Static**: `Customer::total_customer = 5;` - direct access without object
+- **Private Static**: Use static member functions to access
+- **Flexibility**: Can modify static data from anywhere in the program
+
+**Banking Operations**
+- **Deposit**: `deposit(amount)` - updates both individual and total balance
+- **Withdraw**: `withdraw(amount)` - checks balance and updates both balances
+- **Total Tracking**: `total_balance` keeps track of bank's total money
+- **Real-time Updates**: Static variables update across all objects instantly
+
+**Why Static Members?**
+- ✅ Share common data across all objects
+- ✅ Track class-level information (like total count/balance)
+- ✅ Memory efficient - only one copy exists
+- ✅ Accessible without creating objects
+- ✅ Real-time synchronization across all instances
+
+**Real-world Applications**
+- **Banking**: Track total number of accounts
+- **Gaming**: Track total players or score
+- **Inventory**: Track total items in system
 
 ---

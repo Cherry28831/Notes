@@ -1,7 +1,7 @@
-# C++ Constructors and OOP Concepts - Customer Class
+# C++ Constructors, Encapsulation and Abstraction - Customer Class
 
 ## 📚 Overview
-This folder demonstrates constructors, destructors, and advanced OOP concepts in C++ using a **Customer** class from a banking system example.
+This folder demonstrates constructors, destructors, static members, encapsulation, and abstraction concepts in C++ using a **Customer** class from a banking system example.
 
 ## 📁 Files in This Folder
 

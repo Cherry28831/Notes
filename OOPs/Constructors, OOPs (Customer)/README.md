@@ -86,8 +86,8 @@ This folder demonstrates constructors, destructors, and advanced OOP concepts in
 
 ---
 
-### `Customer_Encapsulation.cpp`
-**Static data members and encapsulation**
+### `Customer_Static_Members.cpp`
+**Static data members and functions**
 
 #### Core Concepts:
 
@@ -133,5 +133,57 @@ This folder demonstrates constructors, destructors, and advanced OOP concepts in
 - **Banking**: Track total number of accounts
 - **Gaming**: Track total players or score
 - **Inventory**: Track total items in system
+
+---
+
+### `Customer_Encapsulation.cpp`
+**Encapsulation and data hiding**
+
+#### Core Concepts:
+
+**Encapsulation**
+- **Definition**: Bundling data and methods together while hiding internal implementation
+- **Data Hiding**: Making data members private to prevent direct access
+- **Controlled Access**: Using getter/setter methods to access private data
+- **Security**: Protects data integrity and prevents unauthorized modifications
+
+---
+
+### `Customer_Abstraction.cpp`
+**Abstraction concepts and data hiding**
+
+#### Core Concepts:
+
+**Abstraction**
+- **Definition**: Displaying only essential information and hiding the details
+- **Purpose**: User needs to know the interface, not the implementation
+- **Data Storage**: No need to show how data is stored internally to the user
+- **Function Usage**: User just needs to know how to use functions, not their internal workings
+
+**Real-world Examples**
+- **ATM Machine**: User deposits money without knowing GST is deducted internally
+- **Instagram**: User posts pictures without knowing the internal algorithms
+- **Math Functions**: `pow(2,3)` returns 8, user doesn't need to know the calculation method
+- **Sort Function**: `sort(arr.begin(), arr.end())` works without user knowing the sorting algorithm
+- **Banking**: `deposit(amount)` function hides balance storage and validation logic
+
+**Code Example**
+- **Hidden Details**: `name` and `balance` are private - user can't access directly
+- **Public Interface**: `deposit(amount)` - user only needs to know this function exists
+- **Internal Logic**: Amount validation (`if (amount > 0)`) is hidden from user
+- **Usage**: `c1.deposit(2000)` - simple interface, complex logic hidden
+
+**Benefits of Abstraction**
+- ✅ **Simplicity**: User interacts with simple interface
+- ✅ **Security**: Internal data and logic protected from unauthorized access
+- ✅ **Maintainability**: Can change internal implementation without affecting user code
+- ✅ **Efficiency**: Users focus on what they need, not how it works
+- ✅ **Flexibility**: Only need to change the function implementation, not the declaration
+
+**Implementation in C++**
+- **Private Members**: Hide internal data (`name`, `balance`)
+- **Public Methods**: Provide controlled access (`deposit()`)
+- **Data Hiding**: User cannot directly modify balance
+- **Interface Design**: Simple function calls hide complex operations
 
 ---

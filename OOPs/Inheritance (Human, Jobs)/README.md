@@ -140,3 +140,30 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Overriding**: Child class can override parent methods
 
 ---
+
+### `Human_Multilevel_Inheritance.cpp`
+**Chain of inheritance across multiple levels**
+
+#### Core Concepts:
+
+**Multilevel Inheritance**
+- **Definition**: Chain of classes where each class inherits from the previous one
+- **Structure**: Person → Employee → Manager (A → B → C)
+- **Example**: Animal → Dog → German Shepherd
+
+**Inheritance Chain**
+- **Level 1**: Person (name, introduce())
+- **Level 2**: Employee inherits Person + adds (salary, monthly_salary())
+- **Level 3**: Manager inherits Employee + adds (dept, work())
+
+**Access Accumulation**
+- **Manager gets**: name + salary + dept + introduce() + monthly_salary() + work()
+- **Each level**: Builds upon previous level's functionality
+- **Protected members**: Accessible through inheritance chain
+
+**Key Benefits**
+- **Hierarchical structure**: Models real-world relationships
+- **Cumulative functionality**: Each level adds to previous capabilities
+- **Code organization**: Clear separation of concerns at each level
+
+---

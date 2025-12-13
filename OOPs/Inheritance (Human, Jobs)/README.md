@@ -5,8 +5,8 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 
 ## 📁 Files in This Folder
 
-### `Customer_Inheritance.cpp`
-**Inheritance concepts and implementation**
+### `Human_Inheritance.cpp`
+**Basic inheritance concepts and access modifiers**
 
 #### Inheritance Hierarchy:
 
@@ -80,78 +80,11 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 | **protected**     | private             | private                 |
 | **private**       | any                 | not accessible          |
 
-**Code Example - Human Class**
-```cpp
-class Human {
-private:
-    int a;  // Can't be accessed outside class or in derived class
-    
-protected:
-    int b;  // Can be accessed inside class and in derived class
-    void fun2() { /* protected function */ }
-    
-public:
-    int c;  // Can be accessed from anywhere
-    void fun3() { /* public function */ }
-};
-```
-
-**Complete Class Examples**
-
-**Human Class (Base)**
-```cpp
-class Human {
-private:
-    int religion, color;  // Personal details - kept private for security
-    
-protected:
-    string name;
-    int age, weight;     // Accessible in derived classes
-    
-public:
-    int c;              // Accessible everywhere
-};
-```
-
-**Student Class (Public Inheritance)**
-```cpp
-class Student : public Human {
-    int rollno, fees;
-    // Inherits: name, age, weight as protected
-    // Inherits: c as public
-};
-```
-
-**Teacher Class (Protected Inheritance)**
-```cpp
-class Teacher : protected Human {
-private:
-    int id, salary;
-    
-public:
-    void fun(string n, int a, int w) {
-        name = n;    // Can access protected members
-        age = a;
-        weight = w;
-    }
-    // All inherited members become protected
-};
-```
-
-**Customer Class (Private Inheritance)**
-```cpp
-class Customer : private Human {
-private:
-    int id, amount;
-    
-public:
-    Customer(int i, int amt, string n, int a, int w) {
-        id = i; amount = amt;
-        name = n; age = a; weight = w;  // Can access in constructor
-    }
-    // All inherited members become private
-};
-```
+**Class Examples**
+- **Human Class**: Base class with private (religion, color), protected (name, age, weight), public (methods)
+- **Student Class**: Public inheritance - inherits protected members as protected
+- **Teacher Class**: Protected inheritance - all inherited members become protected
+- **Customer Class**: Private inheritance - all inherited members become private
 
 **Access Examples**
 - `h1.a = 10;` ❌ Error - private member
@@ -167,13 +100,6 @@ public:
 - **Public**: Provide interface functions accessible to everyone
 - **Private Inheritance**: Used when you want to use base class functionality internally (Customer example)
 
-**Types of Inheritance**
-- **Single Inheritance**: One child class inherits from one parent class
-- **Multiple Inheritance**: One child class inherits from multiple parent classes
-- **Multilevel Inheritance**: Chain of inheritance (A → B → C)
-- **Hierarchical Inheritance**: Multiple child classes inherit from one parent class (shown above)
-- **Hybrid Inheritance**: Combination of multiple inheritance types
-
 **Benefits of Inheritance**
 - ✅ **Code Reusability**: Avoid writing duplicate code
 - ✅ **Maintainability**: Changes in parent class automatically reflect in child classes
@@ -186,5 +112,39 @@ public:
 - **Vehicle → Car/Bike**: Common vehicle features inherited by specific types
 - **Animal → Dog/Cat**: Basic animal characteristics inherited by species
 - **Employee → Manager/Developer**: Common employee attributes inherited by roles
+
+---
+
+### `Human_Single_Inheritance.cpp`
+**Single inheritance with constructors and destructors**
+
+#### Core Concepts:
+
+**Single Inheritance**
+- **Definition**: When a derived class inherits from a single base class
+- **Example**: Human (name, age) → Student (inherits Human + rollno, fees)
+- **Linear Relationship**: Takes place one after another in a single line
+
+**Constructor Call Order**
+- **Parent First**: Human default constructor called first
+- **Then Child**: Student constructor called after Human constructor
+- **Reason**: Child constructor automatically calls parent constructor
+- **Parameterized**: Use initializer list `Student(name, age, rollno, fees) : Human(name, age)`
+
+**Destructor Call Order (LIFO)**
+- **Child First**: Student destructor called first
+- **Then Parent**: Human destructor called after Student destructor
+- **Reverse Order**: Opposite of constructor call order
+
+**Method Inheritance**
+- **Inherited Methods**: `s1.work()` - Student can call Human's public methods
+- **Method Overriding**: Student's `display()` overrides Human's `display()`
+- **Access Rules**: Protected members (name, age) accessible in derived class but not externally
+
+**Key Features**
+- **Code Reusability**: Student inherits Human's properties and methods
+- **Constructor Chaining**: Automatic parent constructor call
+- **Method Access**: Public methods from parent available in child
+- **Overriding**: Child class can override parent methods
 
 ---

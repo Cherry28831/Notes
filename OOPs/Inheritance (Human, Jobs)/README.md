@@ -86,14 +86,6 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Teacher Class**: Protected inheritance - all inherited members become protected
 - **Customer Class**: Private inheritance - all inherited members become private
 
-**Access Examples**
-- `h1.a = 10;` ❌ Error - private member
-- `h1.b = 20;` ❌ Error - protected member (not accessible externally)
-- `h1.c = 30;` ✅ Works - public member
-- `h1.fun3();` ✅ Works - public function
-- `h1.fun2();` ❌ Error - protected function
-- `s1.name = "Cherry";` ❌ Error - protected in Student class
-
 **Why Different Access Levels?**
 - **Private**: Hide sensitive data (religion, color) from outside world and derived classes
 - **Protected**: Share common attributes (name, age, weight) with derived classes only

@@ -12,7 +12,7 @@ using namespace std;
 class Human
 {
 protected:
-    string name;  // Protected - accessible to derived classes
+    string name; // Protected - accessible to derived classes
     int age;
 
 public:
@@ -22,14 +22,14 @@ public:
         name = "No Name";
         age = 0;
     }
-    
+
     // Parameterized constructor
     Human(string n, int a)
     {
         name = n;
         age = a;
     }
-    
+
     // Base class display method
     void display()
     {
@@ -43,8 +43,8 @@ public:
 class Student : public Human
 {
 private:
-    int rollNo;     // Student-specific property
-    string course;  // Student-specific property
+    int rollNo;    // Student-specific property
+    string course; // Student-specific property
 
 public:
     // Constructor calls Human's parameterized constructor
@@ -53,7 +53,7 @@ public:
         rollNo = r;
         course = c;
     }
-    
+
     // Overridden display method - adds student-specific info
     void display()
     {
@@ -69,7 +69,7 @@ public:
 class Teacher : public Human
 {
 private:
-    int salary;  // Teacher-specific property
+    int salary; // Teacher-specific property
 
 public:
     // Constructor manually sets inherited properties
@@ -80,7 +80,7 @@ public:
         name = n;        // Accessing protected member from Human
         this->age = age; // Accessing protected member from Human
     }
-    
+
     // Overridden display method - adds teacher-specific info
     void display()
     {
@@ -96,18 +96,11 @@ int main()
     Student s1("Rahul", 20, 1, "CSE");
     cout << "Student Details:" << endl;
     s1.display(); // Calls Student's overridden display method
-    
+
     cout << "\nTeacher Details:" << endl;
     // Create Teacher object - manually initializes Human properties
     Teacher t1(100000, "Raj", 50);
     t1.display(); // Calls Teacher's overridden display method
-    
-    // Hierarchical Inheritance Summary:
-    // Human (base) provides: name, age, display()
-    // Student (derived) adds: rollNo, course, overridden display()
-    // Teacher (derived) adds: salary, overridden display()
-    // Both Student and Teacher inherit from same Human base class
-    
     return 0;
 }
 

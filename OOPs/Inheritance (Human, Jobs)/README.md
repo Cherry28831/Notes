@@ -183,11 +183,7 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Example**: `Engineer, Youtuber` → Engineer constructor first, then Youtuber
 - **Destructor**: Called in reverse order of constructors
 
-**Diamond Problem**
-- **Issue**: When two base classes inherit from same grandparent
-- **Result**: Child gets duplicate copies of grandparent members
-- **Solution**: Virtual inheritance (`virtual public`)
-- **Benefit**: Ensures single copy of grandparent class
+
 
 **Access Rules**
 - **Public members**: Accessible from both base classes
@@ -198,6 +194,47 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Combined functionality**: Access methods from multiple sources
 - **Complex relationships**: Models real-world multi-role scenarios
 - **Careful design**: Requires attention to avoid ambiguity
+
+---
+
+### `Human_Hybrid_Inheritance.cpp`
+**Combination of different inheritance types**
+
+#### Core Concepts:
+
+**Hybrid Inheritance**
+- **Definition**: Combination of different inheritance types in one program
+- **This Example**: Multiple + Hierarchical inheritance
+- **Structure**: Student → Boy/Girl (Hierarchical) + Boy ← Student+Male, Girl ← Student+Female (Multiple)
+
+**Inheritance Combination**
+- **Hierarchical Part**: Student inherited by both Boy and Girl
+- **Multiple Part**: Boy inherits Student+Male, Girl inherits Student+Female
+- **Result**: Complex inheritance structure with shared and specific functionality
+
+**Method Access**
+- **Boy**: print() (Student) + Mprint() (Male) + Bprint() (own)
+- **Girl**: print() (Student) + Fprint() (Female) + Gprint() (own)
+- **Shared**: Both classes inherit Student's functionality
+
+---
+
+### `Human_Diamond_Inheritance.cpp`
+**Diamond problem and virtual inheritance solution**
+
+#### Core Concepts:
+
+**Diamond Problem**
+- **Issue**: When two base classes inherit from same grandparent
+- **Structure**: Grandparent → Parent1, Parent2 → Child
+- **Result**: Child gets duplicate copies of grandparent members
+- **Ambiguity**: Which grandparent member to access?
+
+**Virtual Inheritance Solution**
+- **Syntax**: `class Parent1 : virtual public Grandparent`
+- **Benefit**: Ensures single copy of grandparent class
+- **Result**: Eliminates ambiguity in member access
+- **Use Case**: Resolves diamond inheritance conflicts
 
 ---
 

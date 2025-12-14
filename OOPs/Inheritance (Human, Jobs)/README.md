@@ -200,3 +200,36 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Careful design**: Requires attention to avoid ambiguity
 
 ---
+
+### `Human_Hierarchical_Inheritance.cpp`
+**One base class with multiple derived classes**
+
+#### Core Concepts:
+
+**Hierarchical Inheritance**
+- **Definition**: One parent class with multiple child classes
+- **Structure**: Human → Student, Teacher (1-Parent, M-Children)
+- **Comparison**: Opposite of multiple inheritance (M-Parents, 1-Child)
+
+**Class Structure**
+- **Base Class**: Human (name, age, display())
+- **Derived Class 1**: Student adds (rollNo, course)
+- **Derived Class 2**: Teacher adds (salary)
+
+**Method Overriding**
+- **Base method**: Human's display() shows basic info
+- **Student override**: Adds roll number and course details
+- **Teacher override**: Adds salary information
+
+**Constructor Patterns**
+- **Student**: Uses initializer list `Human(n, a)`
+- **Teacher**: Manually sets inherited properties
+- **Best Practice**: Use initializer list for base class constructors
+
+**Key Benefits**
+- **Code reusability**: Common properties in base class
+- **Consistent interface**: All derived classes share base functionality
+- **Easy maintenance**: Base class changes affect all derived classes
+- **Polymorphism support**: Can treat derived objects as base type
+
+---

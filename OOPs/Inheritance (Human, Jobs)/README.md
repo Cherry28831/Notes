@@ -219,7 +219,7 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 
 ---
 
-### `Human_Diamond_Inheritance.cpp`
+### `Human_Multipath_Inheritance.cpp`
 **Diamond problem and virtual inheritance solution**
 
 #### Core Concepts:

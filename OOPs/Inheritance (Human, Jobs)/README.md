@@ -167,3 +167,36 @@ This folder demonstrates inheritance concepts in C++ using **Human** and **Jobs*
 - **Code organization**: Clear separation of concerns at each level
 
 ---
+
+### `Human_Multiple_Inheritance.cpp`
+**Inheriting from multiple base classes simultaneously**
+
+#### Core Concepts:
+
+**Multiple Inheritance**
+- **Definition**: A class inherits from more than one base class
+- **Structure**: `class Child : public Parent1, public Parent2`
+- **Example**: CodeTeacher inherits from both Engineer and Youtuber
+
+**Constructor Call Order**
+- **Order**: Based on inheritance declaration sequence
+- **Example**: `Engineer, Youtuber` → Engineer constructor first, then Youtuber
+- **Destructor**: Called in reverse order of constructors
+
+**Diamond Problem**
+- **Issue**: When two base classes inherit from same grandparent
+- **Result**: Child gets duplicate copies of grandparent members
+- **Solution**: Virtual inheritance (`virtual public`)
+- **Benefit**: Ensures single copy of grandparent class
+
+**Access Rules**
+- **Public members**: Accessible from both base classes
+- **Private members**: Not accessible even through inheritance
+- **Method calls**: Can use methods from all base classes
+
+**Key Features**
+- **Combined functionality**: Access methods from multiple sources
+- **Complex relationships**: Models real-world multi-role scenarios
+- **Careful design**: Requires attention to avoid ambiguity
+
+---
